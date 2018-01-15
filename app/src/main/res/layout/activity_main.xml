@@ -25,5 +25,15 @@
         android:textColor="@color/result_view"
         android:background="@color/button_color"/>
 
+    <Button
+        android:id="@+id/bankcardbutton"
+        android:layout_marginTop="40dp"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="银行卡识别"
+        android:textColor="@color/result_view"
+        android:background="@color/button_color"/>
+
 
 </LinearLayout>

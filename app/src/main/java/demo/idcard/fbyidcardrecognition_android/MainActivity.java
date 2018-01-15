@@ -20,6 +20,11 @@ import com.baidu.ocr.ui.camera.CameraActivity;
 
 import java.io.File;
 
+/**
+ * QQ交流群：591625129
+ * Created by fby on 2018/1/10.
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_CAMERA = 102;
@@ -49,6 +54,18 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
                         DataFileUtil.getSaveFile(getApplication()).getAbsolutePath());
                 intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_ID_CARD_BACK);
+                startActivityForResult(intent, REQUEST_CODE_CAMERA);
+            }
+        });
+
+        // 银行卡识别
+        findViewById(R.id.bankcardbutton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                intent.putExtra(CameraActivity.KEY_OUTPUT_FILE_PATH,
+                        DataFileUtil.getSaveFile(getApplication()).getAbsolutePath());
+                intent.putExtra(CameraActivity.KEY_CONTENT_TYPE, CameraActivity.CONTENT_TYPE_BANK_CARD);
                 startActivityForResult(intent, REQUEST_CODE_CAMERA);
             }
         });
@@ -102,14 +119,23 @@ public class MainActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(contentType)) {
                     if (CameraActivity.CONTENT_TYPE_ID_CARD_FRONT.equals(contentType)) {
 
+//                        身份证头像面信息
                         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                         intent.putExtra("cardtype", IDCardParams.ID_CARD_SIDE_FRONT);
                         intent.putExtra("cardimage",filePath);
                         startActivity(intent);
                     } else if (CameraActivity.CONTENT_TYPE_ID_CARD_BACK.equals(contentType)) {
 
+//                        身份证国徽面信息
                         Intent intent = new Intent(MainActivity.this, DetailActivity.class);
                         intent.putExtra("cardtype", IDCardParams.ID_CARD_SIDE_BACK);
+                        intent.putExtra("cardimage",filePath);
+                        startActivity(intent);
+                    } else if (CameraActivity.CONTENT_TYPE_BANK_CARD.equals(contentType)) {
+
+//                        银行卡信息
+                        Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                        intent.putExtra("cardtype", "BARKID");
                         intent.putExtra("cardimage",filePath);
                         startActivity(intent);
                     }
