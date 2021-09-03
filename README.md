@@ -132,7 +132,7 @@ private void recIDCard(String idCardSide, String filePath) {
 
 相同方式均可实现银行卡识别、驾驶证识别、行驶证识别、车牌识别、营业执照识别等等，如有需要demo可联系我。
 
-> 希望可以帮助大家, 如有问题可加QQ技术交流群: 591625129
+> 希望可以帮助大家，可加微信：FBY-fan 拉你进群交流
 
 > 如果哪里有什么不对或者不足的地方，还望读者多多提意见或建议
 
@@ -141,4 +141,4 @@ private void recIDCard(String idCardSide, String filePath) {
 ***
 欢迎关注公众号「网罗开发」
 
-![image](http://upload-images.jianshu.io/upload_images/2829694-e90edca41b664acd?imageMogr2/auto-orient/strip%7CimageView2/2/w/400)
+<img width="500" alt="网罗开发" src="https://user-images.githubusercontent.com/24238160/131977235-0938b244-820d-472d-a708-5b4a3ea39f6e.png">
